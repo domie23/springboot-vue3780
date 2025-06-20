@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ZhiyuchengjiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ZhiyuchengjiEntity" id="zhiyuchengjiMap">
+        <result property="xuehao" column="xuehao"/>
+        <result property="xueshengxingming" column="xueshengxingming"/>
+        <result property="banzhurengonghao" column="banzhurengonghao"/>
+        <result property="banzhurenxingming" column="banzhurenxingming"/>
+        <result property="xuenian" column="xuenian"/>
+        <result property="banji" column="banji"/>
+        <result property="tiyuchengji" column="tiyuchengji"/>
+        <result property="deyuchengji" column="deyuchengji"/>
+        <result property="shujujiegouyusuanfa" column="shujujiegouyusuanfa"/>
+        <result property="cyuyan" column="cyuyan"/>
+        <result property="gaoshu1" column="gaoshu1"/>
+        <result property="shujukuxitong" column="shujukuxitong"/>
+        <result property="yingyu1" column="yingyu1"/>
+        <result property="python" column="python"/>
+        <result property="gaoshu2" column="gaoshu2"/>
+        <result property="yingyu2" column="yingyu2"/>
+        <result property="jisuanjiwangluo" column="jisuanjiwangluo"/>
+        <result property="caozuoxitong" column="caozuoxitong"/>
+        <result property="ruanjiangongcheng" column="ruanjiangongcheng"/>
+        <result property="bianyiyuanli" column="bianyiyuanli"/>
+        <result property="xinxianquan" column="xinxianquan"/>
+        <result property="pingjunzhi" column="pingjunzhi"/>
+        <result property="bili" column="bili"/>
+        <result property="zhiyuchengji" column="zhiyuchengji"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ZhiyuchengjiVO" >
+		SELECT * FROM zhiyuchengji  zhiyuchengji         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ZhiyuchengjiVO" >
+		SELECT  zhiyuchengji.* FROM zhiyuchengji  zhiyuchengji 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ZhiyuchengjiView" >
+
+		SELECT  zhiyuchengji.* FROM zhiyuchengji  zhiyuchengji 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ZhiyuchengjiView" >
+		SELECT * FROM zhiyuchengji  zhiyuchengji <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
